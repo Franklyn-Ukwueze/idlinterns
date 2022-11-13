@@ -4,22 +4,27 @@
 
 clone/download the project from github to your machine
 
- $ git clone https://github.com/nnorukaemeka/idlinterns
-Using virtual environment
+    $ git clone https://github.com/nnorukaemeka/idlinterns
+
+### Using virtual environment
 Setup virtual environment
 
- $ pip install virtualenv
+    $ pip install virtualenv
+
 Create a virtual environment
 
- $ virtualenv venv
+    $ virtualenv venv
+
 Activate virtual environment
 
 For Windows:
 
     $ venv\Scripts\activate
+    
 For Mac OS / Linux
 
     $ source venv/bin/activate
+
 Install the project's dependancies
 
- $ pip install requirements.txt           
+    $ pip install requirements.txt           
