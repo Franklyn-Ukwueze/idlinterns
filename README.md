@@ -1,4 +1,10 @@
 # INTRODUCTION
+This is the first task I gave to IDL Interns to test their ability to:
+
+    - read & understand API document,
+    - make API call
+    - write python script for automation
+    - make spreadsheet presentation.
 
 ## TO RUN THE CODE
 
