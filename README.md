@@ -4,7 +4,7 @@
 
 clone/download the project from github to your machine
 
-    $ git clone https://github.com/nnorukaemeka/idlinterns
+    $ git clone https://github.com/nnorukaemeka/idlinterns.git
 
 ### Using virtual environment
 Setup virtual environment
