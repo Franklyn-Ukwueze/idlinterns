@@ -1,10 +1,12 @@
 import requests, os
 import xlrd  #pip install xlrd==1.2.0
 from xlutils.copy import copy
+from dotenv import load_dotenv
 
+load_dotenv()  # take environment variables from .env.
 
 def get_transaction():
-    headers = {'content-type': 'application/json', 'x-access-token': "5443b693E341cb0ab695Xb8"}
+    headers = {'content-type': 'application/json', 'x-access-token': os.getenv("API_KEY")}
     url = "https://safe-payy.herokuapp.com/api/v1/safepay/querypayment/initiated"
 
     try:
