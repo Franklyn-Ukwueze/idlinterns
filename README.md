@@ -33,4 +33,4 @@ For Mac OS / Linux
 
 Install the project's dependancies
 
-    $ pip install -r requirements. txt           
+    $ pip install -r requirements.txt           
