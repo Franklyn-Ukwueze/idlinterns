@@ -65,7 +65,9 @@ def ussd_callback():
             message = "Sorry, Invalid bank selection."
             response = f"END {message} .\n"
         else:
-            url = f"https://safe-payy.herokuapp.com/api/v1/verifyaccount/{string[1]}/{string[2]}"
+            bankcode = resp["data"][0][string[2]]
+            url = f"https://safe-payy.herokuapp.com/api/v1/verifyaccount/{string[1]}/{bankcode}"
+            print(f"url: {url}")
             r = requests.get(url)
             resp = r.json()
             if resp["status"]:
