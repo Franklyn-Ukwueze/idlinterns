@@ -27,7 +27,7 @@ def ussd_callback():
 
 
     #ussd logic
-    if len(string)==0:
+    if text == "":
         #main menu
         response = "CON Please Enter amount.\n"
     elif len(string)==1: #   *384*2760*267#
