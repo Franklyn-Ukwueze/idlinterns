@@ -44,7 +44,7 @@ def ussd_callback():
         if len(string[1])!=10 or len(''.join(i for i in string[1] if i.isdigit())) != 10:
             response = "END Account number must be 10 digits"
         else:
-            url = f"https://safe-payy.herokuapp.com/api/v1/likelybanks/{string[1]}"
+            url = f"{SAFEPAY_URI}/api/v1/likelybanks/{string[1]}"
             r = requests.get(url)
             resp = r.json()
             if resp["status"]:
@@ -55,7 +55,7 @@ def ussd_callback():
                 response = f"END {message} .\n"
     elif len(string)==3: #   *384*2760*267*0076888271*2#
         #sub menu 3
-        url = f"https://safe-payy.herokuapp.com/api/v1/likelybanks/{string[1]}"
+        url = f"{SAFEPAY_URI}/api/v1/likelybanks/{string[1]}"
         r = requests.get(url)
         resp = r.json()
         if not resp["status"]:
@@ -66,7 +66,7 @@ def ussd_callback():
             response = f"END {message} .\n"
         else:
             bankcode = resp["data"][0][string[2]]
-            url = f"https://safe-payy.herokuapp.com/api/v1/verifyaccount/{string[1]}/{bankcode}"
+            url = f"{SAFEPAY_URI}/api/v1/verifyaccount/{string[1]}/{bankcode}"
             print(f"url: {url}")
             r = requests.get(url)
             resp = r.json()
