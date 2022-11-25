@@ -2,12 +2,18 @@ import requests, os
 import xlrd  #pip install xlrd==1.2.0
 from xlutils.copy import copy
 from dotenv import load_dotenv
+from config import API_KEY,SAFEPAY_URI
 
-load_dotenv()  # take environment variables from .env.
+# load_dotenv()  # take environment variables from .env.
+basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
 
+
+
+####################################### Functions #################################
 def get_transaction():
-    headers = {'content-type': 'application/json', 'x-access-token': os.getenv("API_KEY")}
-    url = "https://safe-payy.herokuapp.com/api/v1/safepay/querypayment/initiated"
+    headers = {'content-type': 'application/json', 'x-access-token': API_KEY}
+    url = f"{SAFEPAY_URI}/api/v1/safepay/querypayment/initiated"
 
     try:
         #Make API call
@@ -24,7 +30,7 @@ def get_transaction():
     records = response.get("data")    #This record is a list dictionaries.
     print(f"first record: {records[0]}")
 
-    FOLDER = '/home/megzy/Desktop/IDL_PROJECTS/IDL_Interns'
+    FOLDER = '/home/megzy/Desktop/IDL_PROJECTS/IDL_Interns/app/static'
     filename = "transactions.xlsx"
 
     if filename in os.listdir(FOLDER):
@@ -69,4 +75,4 @@ def get_transaction():
 
 
 #CALL THE get_transaction() FUNCTION
-get_transaction()
+# get_transaction()
