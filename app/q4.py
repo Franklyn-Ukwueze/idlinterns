@@ -32,11 +32,11 @@ def ussd_callback():
         response = "CON Please Enter amount.\n"
     elif len(string)==1: #   *384*2760*267#
         #sub menu 1
-        amount = str(string[0])
-        if not int(amount, base=10)>0:
-            response = f"END Amount NGN {string[0]} is invalid"
-        else:
-            response = "CON Please Enter Account number.\n"
+        # amount = str(string[0])
+        # if not int(amount, base=10)>0:
+        #     response = f"END Amount NGN {string[0]} is invalid"
+        # else:
+        response = "CON Please Enter Account number.\n"
     elif len(string)==2: #   *384*2760*267*0076888271#
         #sub menu 2
         account = string[1]
