@@ -85,7 +85,7 @@ def ussd_callback():
             message = "Transaction not confirmed. \nThank you for your time."
             response = f"END {message} .\n"
         else:
-            message = "Transaction processing.... \nDeveloped by Emeka, Samson & Frank."
+            message = "Transaction processing.... \nDeveloped by Franklyn."
             response = f"END {message} .\n"
 
     else:
