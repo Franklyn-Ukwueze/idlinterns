@@ -4,8 +4,9 @@ import africastalking
 import os, requests, json
 from config import *
 
+print(USSD_username, USSD_api_key)
 africastalking.initialize(USSD_username, USSD_api_key)
-sms = africastalking.SMS
+#sms = africastalking.SMS
 
 # idlinterns.onrender.com
 @app.route('/', methods=['POST', 'GET'])
